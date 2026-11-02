@@ -67,7 +67,7 @@ restart();
 
 /* ---- hero specks + parallax ---- */
 const specks = $("#specks");
-const SPECK_COLORS = ["#dc9a12", "#d8562a", "#4a2a15", "#37492f"];
+const SPECK_COLORS = ["#c39a45", "#4f6b3f", "#3a3122", "#435c38"];
 if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
   for (let i = 0; i < 26; i++) {
     const s = document.createElement("span");

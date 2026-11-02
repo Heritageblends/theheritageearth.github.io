@@ -8,7 +8,7 @@ if (!product) {
     <h1 class="pdp__name">That spice wandered off.</h1>
     <p class="pdp__desc">We couldn't find that product. <a href="index.html#shop" style="text-decoration:underline">Back to the shop →</a></p></section>`;
 } else {
-  document.title = `${product.name} — Spice Shala · Heritage Blends`;
+  document.title = `${product.name} — Spice Shala · Heritage Earth`;
   injectJsonLd(product);
   render();
 }

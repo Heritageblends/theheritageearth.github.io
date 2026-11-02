@@ -17,9 +17,9 @@
   const header = `
 <div class="grain" aria-hidden="true"></div>
 <header class="nav${home ? "" : " scrolled"}" id="nav">
-  <a href="${home ? "#top" : "index.html"}" class="brand" aria-label="Heritage Blends home">
+  <a href="${home ? "#top" : "index.html"}" class="brand" aria-label="Heritage Earth home">
     <span class="brand__mark" aria-hidden="true"></span>
-    <span class="brand__name">Heritage<em>Blends</em></span>
+    <span class="brand__name">Heritage<em>Earth</em></span>
     <span class="brand__sub">Spice Shala</span>
   </a>
   <nav class="nav__links" aria-label="Primary">
@@ -37,7 +37,7 @@
   const footer = `
 <footer class="footer">
   <div class="footer__brand">
-    <span class="footer__wordmark" role="img" aria-label="Heritage Blends — Authenticity in Every Blend"></span>
+    <span class="footer__wordmark" role="img" aria-label="Heritage Earth — Authenticity in Every Blend"></span>
     <p><span lang="ml">സ്പൈസ് ഷാല</span> · Kerala</p>
     ${amz("Also on Amazon →")}
   </div>
@@ -46,7 +46,7 @@
     <div><h4>House</h4><a href="${P}#story">Our story</a><a href="${P}#ritual">The ritual</a></div>
     <div><h4>Say hello</h4><a href="https://wa.me/${WHATSAPP}" target="_blank" rel="noopener">WhatsApp us</a><a href="${INSTAGRAM}" target="_blank" rel="noopener">Instagram ↗</a>${amz("Amazon store ↗")}</div>
   </div>
-  <p class="footer__note">© 2026 Heritage Blends.</p>
+  <p class="footer__note">© 2026 Heritage Earth.</p>
 </footer>
 
 <aside class="drawer" id="drawer" aria-hidden="true" aria-label="Shopping cart">

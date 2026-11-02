@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://heritageblends.github.io/sitemap.xml
+Sitemap: https://theheritageearth.github.io/sitemap.xml
