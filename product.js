@@ -6,7 +6,7 @@ const root = $("#pdp");
 if (!product) {
   root.innerHTML = `<section class="pdp"><p class="crumbs"><a href="index.html">Home</a> / <span>Not found</span></p>
     <h1 class="pdp__name">That spice wandered off.</h1>
-    <p class="pdp__desc">We couldn't find that product. <a href="index.html#shop" style="text-decoration:underline">Back to the shop →</a></p></section>`;
+    <p class="pdp__desc">We couldn't find that product. <a href="shop.html#shop" style="text-decoration:underline">Back to the shop →</a></p></section>`;
 } else {
   document.title = `${product.name} — Spice Shala · Heritage Earth`;
   injectJsonLd(product);
@@ -19,7 +19,7 @@ function injectJsonLd(p) {
     "@context": "https://schema.org", "@type": "Product",
     name: p.name, image: `${SITE}/${p.img}`, description: p.desc,
     category: p.type, brand: { "@type": "Brand", name: "Spice Shala" },
-    offers: { "@type": "Offer", priceCurrency: "INR", price: p.price, availability: "https://schema.org/InStock", url: amazonProduct(p.asin) },
+    offers: { "@type": "Offer", priceCurrency: "INR", price: p.price, availability: "https://schema.org/InStock", url: `${SITE}/product.html?id=${encodeURIComponent(p.id)}` },
   };
   if (count) data.aggregateRating = { "@type": "AggregateRating", ratingValue: avg.toFixed(1), reviewCount: count };
   const el = document.createElement("script");
@@ -80,12 +80,12 @@ function reviewsSection() {
 
 function render() {
   const p = product;
-  const related = PRODUCTS.filter(x => x.id !== p.id && (x.type === p.type || x.tags.some(t => p.tags.includes(t)))).slice(0, 3);
+  const related = PRODUCTS.filter(x => x.name !== p.name && (!x.packs || !/-\d+g$/.test(x.id)) && (x.type === p.type || x.tags.some(t => p.tags.includes(t)))).slice(0, 3);
   const relatedFallback = related.length ? related : PRODUCTS.filter(x => x.id !== p.id).slice(0, 3);
 
   root.innerHTML = `
   <section class="pdp">
-    <p class="crumbs"><a href="index.html">Home</a> / <a href="index.html#shop">Spice Shala</a> / <span>${esc(p.name)}</span></p>
+    <p class="crumbs"><a href="index.html">Home</a> / <a href="shop.html#shop">Spice Shala</a> / <span>${esc(p.name)}</span></p>
     <div class="pdp__main">
       <div class="pdp__art">
         <span class="pdp__badge">${p.type}</span>
@@ -99,6 +99,14 @@ function render() {
           <a href="#reviews">${reviewCount(p.id)} reviews</a></div>
         <div class="pdp__price">${rupee(p.price)} <small>/ ${esc(p.size)} pack</small></div>
         <p class="pdp__desc">${esc(p.desc)}</p>
+        ${p.packs ? `<div class="pack-options" role="group" aria-label="Choose pack size">
+          <span>Pack size</span>
+          ${p.packs.map(([weight, price], i) => {
+            const base = p.id.replace(/-\d+g$/, "");
+            const id = i === 0 ? base : `${base}-${weight}g`;
+            return `<a class="pack-option${p.id === id ? " pack-option--selected" : ""}" href="product.html?id=${id}"${p.id === id ? ' aria-current="true"' : ""}>${weight}g · ${rupee(price)}</a>`;
+          }).join("")}
+        </div>` : ""}
         <dl class="pdp__meta">
           ${p.heat ? `<div><dt>Heat</dt><dd>${heatDots(p.heat)}</dd></div>` : ""}
           <div><dt>Pack</dt><dd>${esc(p.size)}</dd></div>
@@ -115,7 +123,7 @@ function render() {
           <button class="btn btn--solid" id="pdpAdd">Add to tin — <span id="pdpTotal">${rupee(p.price)}</span></button>
         </div>
         ${waButton(`Hi Spice Shala, I'd like to order ${p.name} (${p.size}) — ${rupee(p.price)}.`, "pdp__wa")}
-        <a class="pdp__amazon" href="${amazonProduct(p.asin)}" target="_blank" rel="noopener">Buy this on Amazon ↗</a>
+        <a class="pdp__amazon" href="${p.asin ? amazonProduct(p.asin) : amazonStore()}" target="_blank" rel="noopener">${p.asin ? "Buy this on Amazon" : "Visit our Amazon store"} ↗</a>
       </div>
     </div>
   </section>

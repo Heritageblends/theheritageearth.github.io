@@ -1,23 +1,20 @@
-const PRODUCTS = [
-  { id: "turmeric", name: "Turmeric Powder", type: "Spices", price: 130, size: "100g", asin: "B0GVM631VG", img: "assets/turmeric.jpg", c1: "#c9860a", c2: "#f0b32e", heat: 1,
-    tags: ["earthy", "golden"], desc: "Pure Kerala haldi — high-curcumin turmeric ground fine. 100% natural, no colour or additives. Earthy, faintly bitter, deeply staining.",
-    origin: "Organic · Kerala", use: "Every curry base, golden milk, marinades", ml: "മഞ്ഞൾ പൊടി" },
-  { id: "chilli", name: "Kashmiri Chilli Powder", type: "Spices", price: 222, size: "200g", asin: "B0GWY1QY93", img: "assets/chilli.jpg", c1: "#a02c17", c2: "#d6472a", heat: 2,
-    tags: ["deep red", "mild heat"], desc: "Kashmiri chillies ground for a rich, natural red and a gentle warmth rather than fierce heat. No added colour.",
-    origin: "Organic · Kerala", use: "Curries, tandoori marinades, pickles", ml: "കാശ്മീരി മുളക് പൊടി" },
-  { id: "garam", name: "Garam Masala", type: "Spices", price: 199, size: "100g", asin: "B0GWY7PBB4", img: "assets/garam.jpg", c1: "#6a3a1c", c2: "#a8602e", heat: 2,
-    tags: ["warm", "complex"], desc: "A strong blend of premium spices — roasted and ground for a rich aroma and bold flavour. 100% pure and natural, no fillers.",
-    origin: "Blended in Kerala", use: "Finish curries, biryani, roast vegetables", ml: "ഗരം മസാല" },
-  { id: "chutney", name: "Chutney Powder", type: "Spices", price: 140, size: "100g", asin: "B0GXWWXZTY", img: "assets/chutney.jpg", c1: "#8a4a1c", c2: "#c0803a", heat: 2,
-    tags: ["nutty", "spicy"], desc: "Homemade-style gun powder podi of roasted lentils, chilli and curry leaf. Mix with hot rice and ghee, or dust over idli and dosa.",
-    origin: "Blended in Kerala", use: "Rice & ghee, idli, dosa", ml: "ചമ്മന്തിപ്പൊടി" },
-  { id: "pepper", name: "Whole Black Pepper", type: "Spices", price: 190, size: "100g", asin: "B0GVML7XCH", img: "assets/pepper.jpg", c1: "#3a2a1e", c2: "#6b4a30", heat: 3,
-    tags: ["bold aroma", "strong"], desc: "Premium Kerala whole black pepper (kali mirch) — bold aroma and strong flavour. 100% natural, nothing added.",
-    origin: "Organic · Kerala", use: "Rasam, eggs, everything — grind fresh", ml: "കുരുമുളക്" },
-  { id: "nutmeg", name: "Nutmeg & Mace (Javitri)", type: "Spices", price: 150, size: "25g", asin: "B0H276NGF9", img: "assets/nutmeg.jpg", c1: "#7a4626", c2: "#a9703f", heat: 1,
-    tags: ["aromatic", "warm"], desc: "Sun-dried Kerala nutmeg mace (javitri). Warmth without heat — perfect for biryani, desserts and masala blends.",
-    origin: "Sun-dried · Kerala", use: "Biryani, desserts, masala", ml: "ജാതിപത്രി" },
+const SPICE_PACKS = [
+  {"id": "turmeric", "name": "Turmeric Powder", "type": "Spices", "img": "assets/1.Turmeric Powder.png", "c1": "#8a4a1c", "c2": "#c0803a", "heat": 0, "tags": ["earthy"], "desc": "Grown in our own farms, carefully harvested and processed to retain its natural colour, aroma and earthy flavour. A kitchen essential that brings authentic warmth to everyday cooking.", "origin": "Kerala", "use": "Everyday cooking", "ml": "മഞ്ഞൾ പൊടി", "packs": [[100, 60], [250, 120], [500, 230]]},
+  {"id": "redchilli", "name": "Red Chilli Powder", "type": "Spices", "img": "assets/2. Red Chilli Powder.png", "c1": "#8a4a1c", "c2": "#c0803a", "heat": 0, "tags": ["fiery"], "desc": "Ignite your taste buds with the fiery kick and rich, natural color of our premium Red Chilli Powder. Milled from carefully selected, sun-dried pungent red chilies, this spice is an indispensable staple in kitchens worldwide, adding vibrant heat and robust flavor to curries, dals, pickles, and snack seasonings. Manufactured under strict quality standards with zero artificial colors or synthetic preservatives, it ensures pure and uncompromised heat in every spoonful. ", "origin": "Kerala", "use": "Curries, dals, pickles", "ml": "മുളക് പൊടി", "packs": [[100, 42], [250, 100], [500, 195]]},
+  {"id": "coriander", "name": "Coriander Powder", "type": "Spices", "img": "assets/3.Coriander powder.png", "c1": "#8a4a1c", "c2": "#c0803a", "heat": 0, "tags": ["earthy"], "desc": "Crafted from premium-quality, handpicked coriander seeds, our Coriander Powder brings a mild, warm, and earthy aroma to your everyday cooking. It serves as an essential base spice in numerous traditional curries, stews, dry vegetable preparations, and spice mixes. Finely ground to blend seamlessly into your recipes, it helps thicken gravies while imparting a subtle citrusy and sweet undertone that balances heavier spices. ", "origin": "Kerala", "use": "Curries, stews, vegetables", "ml": "മല്ലിപ്പൊടി", "packs": [[100, 38], [250, 90], [500, 175]]},
+  {"id": "garam", "name": "Garam Masala", "type": "Spices", "img": "assets/4.Garam Masala.png", "c1": "#8a4a1c", "c2": "#c0803a", "heat": 0, "tags": ["aromatic"], "desc": "Our signature Garam Masala is an aromatic and perfectly balanced blend of premium warming spices designed to transform ordinary meals into culinary masterpieces. Carefully proportioned and finely ground, a small pinch of this aromatic powder adds depth, warmth, and a rich, complex fragrance to curries, biryanis, lentil dishes, and marinades. Made without any artificial colors, fillers, or chemical preservatives.", "origin": "Kerala", "use": "Curries, biryanis, lentils", "ml": "ഗരം മസാല", "packs": [[50, 85], [100, 150], [250, 290]]},
+  {"id": "chilli", "name": "Kashmiri Chilli Powder", "type": "Spices", "img": "assets/5. Kashmiri Chilli Powder.png", "c1": "#8a4a1c", "c2": "#c0803a", "heat": 0, "tags": ["mild"], "desc": "Bring a vibrant, restaurant-style red hue and a mild, enticing flavor to your favorite recipes with our premium Kashmiri Chilli Powder. Specially selected for its brilliant natural color rather than intense heat, it enhances the visual appeal of tandoori dishes, butter chicken, rich curries, and vegetable fries without overpowering the palate", "origin": "Kerala", "use": "Curries, tandoori, vegetables", "ml": "കാശ്മീരി മുളക് പൊടി", "packs": [[100, 100], [250, 250], [500, 470]]},
+  {"id": "pepper", "name": "Whole Black Pepper", "type": "Spices", "img": "assets/7. Black Pepper.png", "c1": "#8a4a1c", "c2": "#c0803a", "heat": 0, "tags": ["bold"], "desc": "Experience the bold, fiery essence of whole Black Pepper sourced directly and exclusively from plants grown in our own farm. These carefully selected peppercorns are sun-dried to perfection, retaining their natural volatile oils, intense aroma. ", "origin": "Kerala", "use": "Grind fresh for savoury dishes", "ml": "കുരുമുളക്", "packs": [[100, 90], [250, 210], [500, 400]]},
+  {"id": "pepperpowder", "name": "Black Pepper Powder", "type": "Spices", "img": "assets/6.Black pepper powder.png", "c1": "#8a4a1c", "c2": "#c0803a", "heat": 0, "tags": ["pungent"], "desc": "Our premium Black Pepper Powder is meticulously ground from high-grade peppercorns that are carefully grown and harvested in our own farm. Renowned as the \"King of Spices,\" this finely textured powder adds a sharp, robust, and pleasantly pungent heat to a wide variety of savory dishes, soups, marinades, and seasoning blends. Free from artificial colors and preservatives, it delivers authentic flavor and aroma straight from our fields to your kitchen. ", "origin": "Kerala", "use": "Soups, marinades, seasoning", "ml": "കുരുമുളക് പൊടി", "packs": [[50, 75], [100, 140]]},
+  {"id": "chutney", "name": "Chutney Powder", "type": "Spices", "img": "assets/8. Chutney Powder.png", "c1": "#8a4a1c", "c2": "#c0803a", "heat": 0, "tags": ["spicy"], "desc": "Add a fiery and flavorful punch to your traditional South Indian breakfast favorites with our authentic Chutney Powder, popularly known as Gun Powder. Expertly blended using roasted lentils, aromatic spices, and dried chilies, it is the ultimate accompaniment for fluffy idlis, crispy dosas, and warm uttapams. When mixed generously with sesame oil or melted ghee, it creates a delectable paste that instantly delights your taste buds. ", "origin": "Kerala", "use": "Idli, dosa, uttapam", "ml": "ചമ്മന്തിപ്പൊടി", "packs": [[100, 80], [250, 150]]},
+  {"id": "sambar", "name": "Sambar Powder", "type": "Spices", "img": "assets/9.Sambar powder.png", "c1": "#8a4a1c", "c2": "#c0803a", "heat": 0, "tags": ["aromatic"], "desc": "Transport yourself to the heart of traditional South Indian cuisine with our authentic Sambar Powder, specially formulated to craft the perfect Kerala-style or South Indian sambar. This expertly roasted and ground blend combines lentils, coriander, cumin, fenugreek, and aromatic spices to deliver a rich, deeply satisfying flavor profile. ", "origin": "Kerala", "use": "Kerala-style and South Indian sambar", "ml": "സാമ്പാർ പൊടി", "packs": [[100, 50], [250, 120]]},
+  {"id": "whole-nutmeg", "name": "Nutmeg", "type": "Spices", "img": "assets/10. Nutmeg.png", "c1": "#8a4a1c", "c2": "#c0803a", "heat": 0, "tags": ["warm"], "desc": "Sourced directly from premium trees grown in our own farm, our whole Nutmeg (Jathikka) is a dense, aromatic spice cherished for its warm, sweet, and woody fragrance. Freshly grated nutmeg can elevate both sweet and savory recipes, ranging from creamy bechamel sauces, soups, and potato dishes to festive cakes, custards, and warm spiced beverages. Packed with natural essential oils, it offers a rich, comforting depth of flavor that mass-processed alternatives simply cannot match. Free from any chemical additives or artificial treatments, our farm-grown nutmeg brings pure, authentic quality and exquisite aroma straight to your pantry. ", "origin": "Kerala", "use": "Sauces, cakes, beverages", "ml": "ജാതിക്ക", "packs": [[100, 65], [200, 120]]},
+  {"id": "nutmeg", "name": "Nutmeg Mace", "type": "Spices", "img": "assets/11. Nutmeg Mace.png", "c1": "#8a4a1c", "c2": "#c0803a", "heat": 0, "tags": ["aromatic"], "desc": "Delicate, golden, and intensely aromatic, our premium Nutmeg Mace is harvested directly from the protective outer web of nutmeg fruits grown in our own farm. Also known as Jathi Patri, this exquisite spice carries a sweeter, lighter, and more refined fragrance compared to nutmeg itself. It is a prized ingredient in rich biryanis, slow-cooked meat broths, traditional baked goods, and intricate spice blends like garam masala. Completely natural, free from artificial preservatives, and carefully sourced from our agricultural estate, it adds a touch of royal warmth, elegance, and distinct flavor to gourmet dishes. ", "origin": "Kerala", "use": "Biryani, broths, baking", "ml": "ജാതിപത്രി", "packs": [[100, 200], [200, 400]]},
+];
 
+const PRODUCTS = SPICE_PACKS.flatMap(p => p.packs.map(([weight, price], i) => ({
+  ...p, id: i === 0 ? p.id : `${p.id}-${weight}g`, size: `${weight}g`, price
+}))).concat([
   { id: "littlemillet", name: "Little Millet", type: "Millets", price: 160, size: "500g", asin: "B0H18PMV7V", img: "assets/littlemillet.jpg", c1: "#b89b5e", c2: "#d8c48a", heat: 0,
     tags: ["high fibre", "light"], desc: "Chama rice — natural, unpolished little millet, rich in fibre. Cooks up like rice; light and easy for daily meals.",
     origin: "Natural & unpolished", use: "Rice swap, pongal, upma", ml: "ചാമ" },
@@ -46,7 +43,7 @@ const PRODUCTS = [
   { id: "barley", name: "Barley (Yavam)", type: "Rice & Grains", price: 136, size: "500g", asin: "B0H4BNPWS4", img: "assets/barley.jpg", c1: "#b6a06a", c2: "#d6c495", heat: 0,
     tags: ["high fibre", "cooling"], desc: "Premium whole-grain barley (yavam), natural and unpolished. High-fibre and gentle — for soups, porridge and cooling barley water.",
     origin: "Whole grain · natural", use: "Soups, porridge, barley water", ml: "യവം" },
-];
+]);
 
 const SEED_REVIEWS = {
   turmeric: [
@@ -162,6 +159,7 @@ function addReview(id, review) {
 /* ---- product card (shared by grid + related) ---- */
 function cardHTML(p) {
   const n = reviewCount(p.id);
+  const displayPack = p.packs && (p.packs.find(([weight]) => weight === 100) || p.packs[0]);
   return `<article class="card" data-id="${p.id}">
     <a class="card__art" href="product.html?id=${p.id}" aria-label="View ${p.name}">
       <img class="card__img" src="${p.img}" alt="${p.name}" width="600" height="600" loading="lazy">
@@ -175,8 +173,8 @@ function cardHTML(p) {
       <div class="card__tags">${p.tags.map(t => `<span class="tag">${t}</span>`).join("")}</div>
       ${p.heat ? `<div class="heat">Heat ${heatDots(p.heat)}</div>` : ""}
       <div class="card__foot">
-        <span class="card__price">${rupee(p.price)} <small>/ ${p.size}</small></span>
-        <button class="card__add" data-add="${p.id}" aria-label="Add ${p.name} to cart">+</button>
+        <span class="card__price">${displayPack ? `${rupee(displayPack[1])} <small>/ ${displayPack[0]}g</small>` : `${rupee(p.price)} <small>/ ${p.size}</small>`}</span>
+        <button class="card__add" ${p.packs && p.packs.length > 1 ? `data-pick="${p.id}"` : `data-add="${p.id}"`} aria-label="${p.packs && p.packs.length > 1 ? "Choose a pack size for" : "Add"} ${p.name}">+</button>
       </div>
     </div>
   </article>`;
@@ -237,6 +235,7 @@ function bump() {
 /* delegated clicks (grid, cart, quick view) */
 document.addEventListener("click", e => {
   const add = e.target.closest("[data-add]"); if (add) { addToCart(add.dataset.add); if (modal.classList.contains("open")) closeModal(); return; }
+  const pick = e.target.closest("[data-pick]"); if (pick) return openPackPicker(pick.dataset.pick);
   const quick = e.target.closest("[data-quick]"); if (quick) return openModal(quick.dataset.quick);
   const inc = e.target.closest("[data-inc]"); if (inc) return setQty(inc.dataset.inc, 1);
   const dec = e.target.closest("[data-dec]"); if (dec) return setQty(dec.dataset.dec, -1);
@@ -256,6 +255,27 @@ $("#drawerClose").addEventListener("click", closeDrawer);
 scrim.addEventListener("click", () => scrimHandler && scrimHandler());
 
 /* ---- quick-view modal ---- */
+function openPackPicker(id) {
+  const p = productById(id);
+  $("#modalCard").innerHTML = `
+    <button class="modal__close" id="modalClose" aria-label="Close">&times;</button>
+    <div class="pack-picker">
+      <h2 id="modalName">${esc(p.name)}</h2>
+      <p>Choose a pack size</p>
+      <div class="pack-picker__options">
+        ${p.packs.map(([weight, price], i) => {
+          const variantId = i === 0 ? p.id : `${p.id}-${weight}g`;
+          return `<button type="button" class="pack-option" data-add="${variantId}">${weight}g · ${rupee(price)}</button>`;
+        }).join("")}
+      </div>
+    </div>`;
+  lastFocus = document.activeElement;
+  modal.inert = false; modal.classList.add("open"); modal.setAttribute("aria-hidden", "false");
+  showScrim(closeModal);
+  $("#modalClose").addEventListener("click", closeModal);
+  $("#modalClose").focus();
+}
+
 function openModal(id) {
   const p = productById(id);
   $("#modalCard").innerHTML = `
@@ -269,7 +289,14 @@ function openModal(id) {
       <p class="modal__desc">${p.desc}</p>
       <div class="modal__price">${rupee(p.price)} <small>/ ${p.size}</small></div>
       <div class="modal__actions">
-        <button class="btn btn--solid" data-add="${p.id}">Add to tin</button>
+        ${p.packs && p.packs.length > 1 ? `<div class="pack-options" role="group" aria-label="Choose a pack size to add">
+          <span>Choose a pack size to add</span>
+          ${p.packs.map(([weight, price], i) => {
+            const base = p.id.replace(/-\d+g$/, "");
+            const id = i === 0 ? base : `${base}-${weight}g`;
+            return `<button type="button" class="pack-option" data-add="${id}">${weight}g · ${rupee(price)}</button>`;
+          }).join("")}
+        </div>` : `<button class="btn btn--solid" data-add="${p.id}">Add to tin</button>`}
         <a class="btn btn--ghost" href="product.html?id=${p.id}">Full details & reviews →</a>
       </div>
     </div>`;

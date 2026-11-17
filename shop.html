@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shop Spices, Millets &amp; Grains — Spice Shala</title>
+<meta name="description" content="Shop Spice Shala spices, millets and heritage grains from Kerala." />
+<link rel="icon" href="assets/logo.png" type="image/png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&amp;family=Archivo:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css?v=6" />
+<noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
+</head>
+<body data-page="shop">
+<main id="top" class="shop-page">
+  <section class="shop" id="shop">
+    <div class="shop__head">
+      <div class="reveal">
+        <p class="eyebrow">The pantry · <span lang="ml">അടുക്കള</span></p>
+        <h2 class="section-title">Spices, millets &amp; heritage grains.</h2>
+      </div>
+      <div class="shop__tools reveal">
+        <div class="search">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M16 16l4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <input type="search" id="search" placeholder="Search turmeric, ragi, black rice…" aria-label="Search spices" />
+        </div>
+        <div class="filters" id="filters" role="group" aria-label="Filter by type"></div>
+      </div>
+    </div>
+    <div class="grid" id="grid"></div>
+    <p class="grid__empty" id="gridEmpty" hidden>No spice by that name — try “pepper”.</p>
+  </section>
+
+</main>
+<script src="config.js"></script>
+<script src="chrome.js?v=3"></script>
+<script src="shared.js?v=4"></script>
+<script src="shop.js"></script>
+</body>
+</html>

@@ -7,7 +7,7 @@
 <meta name="description" content="Spice Shala, a Heritage Earth brand: small-batch Kerala spices, hand-graded and stone-milled. Cardamom, Malabar pepper, garam masala and more — ground to order." />
 <link rel="canonical" href="https://theheritageearth.github.io/" />
 <meta name="theme-color" content="#3a3122" />
-<link rel="icon" href="assets/favicon.png" type="image/png" />
+<link rel="icon" href="assets/logo.png" type="image/png" />
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Spice Shala — Kerala Spices · Heritage Earth" />
@@ -25,11 +25,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="styles.css?v=5" />
 </head>
 <body data-page="home">
 
 <main id="top">
+  <div class="home-banner">
+    <img src="assets/Home%20page.png" width="2000" height="533" alt="Heritage Earth: Celebrating the heroes of every harvest. Spice Shala, our online food brand, offers 100% natural products without additives and preservatives." />
+  </div>
   <section class="hero">
     <div class="hero__specks" id="specks" aria-hidden="true"></div>
     <div class="hero__inner">
@@ -42,7 +45,7 @@
       </h1>
       <p class="hero__lede reveal">100% natural spices, millets and heritage grains from Kerala — nothing added: no colour, no additives, no preservatives. The warmth of a Kerala kitchen, sealed in a pack.</p>
       <div class="hero__cta reveal">
-        <a href="#shop" class="btn btn--solid">Shop the spices</a>
+        <a href="shop.html#shop" class="btn btn--solid">Shop the spices</a>
         <a href="https://www.amazon.in/stores/page/A7D6D321-57EE-4AC2-9443-A8E4D26991DD" target="_blank" rel="noopener" class="btn btn--ghost">Buy on Amazon ↗</a>
       </div>
       <dl class="hero__stats reveal">
@@ -67,24 +70,6 @@
     </div>
   </section>
 
-  <section class="shop" id="shop">
-    <div class="shop__head">
-      <div class="reveal">
-        <p class="eyebrow">The pantry · <span lang="ml">അടുക്കള</span></p>
-        <h2 class="section-title">Spices, millets &amp; heritage grains.</h2>
-      </div>
-      <div class="shop__tools reveal">
-        <div class="search">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M16 16l4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-          <input type="search" id="search" placeholder="Search turmeric, ragi, black rice…" aria-label="Search spices" />
-        </div>
-        <div class="filters" id="filters" role="group" aria-label="Filter by type"></div>
-      </div>
-    </div>
-    <div class="grid" id="grid"></div>
-    <p class="grid__empty" id="gridEmpty" hidden>No spice by that name — try “pepper”.</p>
-  </section>
-
   <section class="story" id="story">
     <div class="story__art reveal" aria-hidden="true">
       <div class="story__tile t1"></div>
@@ -96,7 +81,7 @@
       <h2 class="section-title">We grew up between drying mats and the smell of roasting coriander.</h2>
       <p>Spice Shala began on a verandah in Kerala, where generations sorted cardamom pods by lamplight and argued over the right ratio for garam masala. We never wrote it down — we tasted until it was right.</p>
       <p>Today we work with the same estates our family bought from, grade by hand, and mill in small lots so nothing sits losing its oils. What reaches you is what we'd cook with ourselves.</p>
-      <a href="#shop" class="btn btn--ghost">Taste the difference</a>
+      <a href="shop.html#shop" class="btn btn--ghost">Taste the difference</a>
     </div>
   </section>
 
@@ -118,34 +103,13 @@
     <div class="voices__dots" id="voiceDots" role="tablist" aria-label="Testimonials"></div>
   </section>
 
-  <section class="contact" id="contact">
-    <div class="contact__head reveal">
-      <p class="eyebrow">Contact us</p>
-      <h2 class="section-title">Ring the kitchen, or come say hello.</h2>
-    </div>
-    <div class="contact__grid">
-      <div class="contact__card reveal">
-        <h3>Call</h3>
-        <a href="tel:+917306889276">+91 73068 89276</a>
-        <p>Mon–Sat · 9am–7pm IST</p>
-      </div>
-      <div class="contact__card reveal">
-        <h3>WhatsApp</h3>
-        <a href="https://wa.me/917306889276" target="_blank" rel="noopener">Message us to order ↗</a>
-        <p>Fastest for orders &amp; stock</p>
-      </div>
-      <div class="contact__card reveal">
-        <h3>Visit</h3>
-        <a href="https://www.google.com/maps/search/?api=1&amp;query=Kizhakkambalam+Ernakulam+Kerala+683562" target="_blank" rel="noopener"><address>Kizhakkambalam,<br>Ernakulam, Kerala, India<br>683562</address></a>
-      </div>
-    </div>
-  </section>
+
 
 </main>
 
 <script src="config.js"></script>
-<script src="chrome.js"></script>
-<script src="shared.js"></script>
-<script src="app.js"></script>
+<script src="chrome.js?v=3"></script>
+<script src="shared.js?v=4"></script>
+<script src="app.js?v=3"></script>
 </body>
 </html>
